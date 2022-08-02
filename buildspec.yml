@@ -38,8 +38,8 @@ phases:
         - $(aws ecr get-login --no-include-email)
         - export KUBECONFIG=$HOME/.kube/config
         - echo `ls -l`
+        - echo 'running requirements.txt...'
         - pip3 install -r requirements.txt 
-        - echo 'all installations done'
         - python -m pytest test_main.py
   build:
     commands:
